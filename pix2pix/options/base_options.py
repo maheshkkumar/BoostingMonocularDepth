@@ -1,10 +1,12 @@
 import argparse
 import os
-from pix2pix.util import util
-import torch
-import pix2pix.models
-import pix2pix.data
+
+import models.boosting.pix2pix.data
+import models.boosting.pix2pix.models
 import numpy as np
+import torch
+from models.boosting.pix2pix.util import util
+
 
 class BaseOptions():
     """This class defines options used during both training and test time.
@@ -91,13 +93,13 @@ class BaseOptions():
 
         # modify model-related parser options
         model_name = opt.model
-        model_option_setter = pix2pix.models.get_option_setter(model_name)
+        model_option_setter = models.boosting.pix2pix.models.get_option_setter(model_name)
         parser = model_option_setter(parser, self.isTrain)
         opt, _ = parser.parse_known_args()  # parse again with new defaults
 
         # modify dataset-related parser options
         dataset_name = opt.dataset_mode
-        dataset_option_setter = pix2pix.data.get_option_setter(dataset_name)
+        dataset_option_setter = models.boosting.pix2pix.data.get_option_setter(dataset_name)
         parser = dataset_option_setter(parser, self.isTrain)
 
         # save and return the parser

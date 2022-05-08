@@ -1,8 +1,9 @@
-import os
-import cv2
-import numpy as np
 import math
+import os
+
+import cv2
 import matplotlib.pyplot as plt
+import numpy as np
 import skimage.measure
 
 # miscellaneous function for reading, writing and processing rgb and depth images.
@@ -153,10 +154,8 @@ class Images:
 
 
 class ImageandPatchs:
-    def __init__(self, root_dir, name, patchsinfo, rgb_image, scale=1):
-        self.root_dir = root_dir
+    def __init__(self, patchsinfo, rgb_image, scale=1):
         self.patchsinfo = patchsinfo
-        self.name = name
         self.patchs = patchsinfo
         self.scale = scale
 

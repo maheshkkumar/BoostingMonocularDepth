@@ -11,8 +11,9 @@ Now you can use the dataset class by specifying flag '--dataset_mode dummy'.
 See our template dataset class 'template_dataset.py' for more details.
 """
 import importlib
+
 import torch.utils.data
-from pix2pix.data.base_dataset import BaseDataset
+from models.boosting.pix2pix.data.base_dataset import BaseDataset
 
 
 def find_dataset_using_name(dataset_name):
@@ -22,7 +23,7 @@ def find_dataset_using_name(dataset_name):
     be instantiated. It has to be a subclass of BaseDataset,
     and it is case-insensitive.
     """
-    dataset_filename = "pix2pix.data." + dataset_name + "_dataset"
+    dataset_filename = "models.boosting.pix2pix.data." + dataset_name + "_dataset"
     datasetlib = importlib.import_module(dataset_filename)
 
     dataset = None

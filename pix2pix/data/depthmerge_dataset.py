@@ -1,10 +1,10 @@
-from pix2pix.data.base_dataset import BaseDataset
-from pix2pix.data.image_folder import make_dataset
-from pix2pix.util.guidedfilter import GuidedFilter
+import os
 
 import numpy as np
-import os
 import torch
+from models.boosting.pix2pix.data.base_dataset import BaseDataset
+from models.boosting.pix2pix.data.image_folder import make_dataset
+from models.boosting.pix2pix.util.guidedfilter import GuidedFilter
 from PIL import Image
 
 
